@@ -4,4 +4,5 @@ members = [
     "crates/ganttcore",
     "crates/gantt-cli",
     "crates/gantt-wasm",
+    "crates/gt-app",
 ]
