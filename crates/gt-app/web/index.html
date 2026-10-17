@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GraphTool</title>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #f0f0f0; }
+  #canvas { width: 100%; height: 100%; display: block; }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script type="module">
+  // wasm-pack build output is expected in ./pkg/
+  import init from "./pkg/gt_app.js";
+  init().then(({ WebHandle }) => {
+    const canvas = document.getElementById("canvas");
+    const handle = new WebHandle();
+    handle.start(canvas).catch(console.error);
+  });
+</script>
+</body>
+</html>
