@@ -1,0 +1,7 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/ganttcore",
+    "crates/gantt-cli",
+    "crates/gantt-wasm",
+]

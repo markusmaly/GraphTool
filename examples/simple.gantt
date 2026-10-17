@@ -1,0 +1,18 @@
+@startgantt
+projectscale daily
+project starts 2025-01-06
+title Product Launch Plan
+
+skinparam barColor MidnightBlue
+skinparam barHighlightColor DodgerBlue
+skinparam milestoneColor Crimson
+
+[T1] Prototype design starts 2025-01-06 and lasts 8 days
+[T1] is 60% complete
+[T2] Prototype build starts at [T1]'s end and lasts 10 days
+[T3] Marketing prep starts 2025-01-08 and lasts 12 days
+[T3] is 25% complete
+[M1] Internal demo happens at [T2]'s end
+[T4] Pilot production starts at [T2]'s end and lasts 6 days
+[M2] Launch happens at [T4]'s end
+@endgantt

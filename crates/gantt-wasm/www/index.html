@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GraphTool Gantt — Browser Demo</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; display: flex; height: 100vh; }
+  #editor { width: 40%; height: 100%; box-sizing: border-box; resize: none;
+            font-family: monospace; font-size: 13px; padding: 8px;
+            border-right: 1px solid #ccc; }
+  #preview { flex: 1; overflow: auto; padding: 16px; }
+  #preview svg { max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<textarea id="editor" spellcheck="false">
+@startgantt
+projectscale daily
+project starts 2025-01-06
+title Product Launch Plan
+
+skinparam barColor MidnightBlue
+skinparam barHighlightColor DodgerBlue
+skinparam milestoneColor Crimson
+
+[T1] Prototype design starts 2025-01-06 and lasts 8 days
+[T1] is 60% complete
+[T2] Prototype build starts at [T1]'s end and lasts 10 days
+[T3] Marketing prep starts 2025-01-08 and lasts 12 days
+[T3] is 25% complete
+[M1] Internal demo happens at [T2]'s end
+[T4] Pilot production starts at [T2]'s end and lasts 6 days
+[M2] Launch happens at [T4]'s end
+@endgantt
+</textarea>
+<div id="preview"></div>
+<script src="./app.js"></script>
+</body>
+</html>
