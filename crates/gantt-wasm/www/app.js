@@ -6,25 +6,16 @@ const decoder = new TextDecoder();
 
 let wasm = null;
 
-// Bump allocator allocating downward from the top of WASM linear memory.
-// The Rust module uses only stack + statics (no allocator in the hot path),
-// so anything beyond a safety floor is free for us.
+// Scratch allocator: grow the linear memory first, then hand out the freshly
+// added pages. This keeps JS buffers strictly above the Rust heap/stack,
+// which lives in the low pages.
 const PAGE = 65536;
-let top = 0;
-const FLOOR_PAGES = 16; // leave the first 16 pages to the Rust module
 
 function wasmMalloc(len) {
   const aligned = (len + 15) & ~15;
-  if (top === 0) {
-    top = wasm.memory.buffer.byteLength;
-  }
-  const floor = FLOOR_PAGES * PAGE;
-  if (top - aligned < floor) {
-    const needPages = Math.ceil((floor + aligned - top) / PAGE);
-    wasm.memory.grow(needPages);
-  }
-  top -= aligned;
-  return top;
+  const oldPages = wasm.memory.buffer.byteLength / PAGE;
+  wasm.memory.grow(Math.ceil(aligned / PAGE) + 2);
+  return oldPages * PAGE;
 }
 
 function renderNow() {
@@ -47,6 +38,37 @@ function renderNow() {
   preview.innerHTML = decoder.decode(bytes);
 }
 
+function loadExamples() {
+  const cap = wasm.examples_json_capacity();
+  const outPtr = wasmMalloc(cap);
+  const written = wasm.examples_json(outPtr, cap);
+  if (written === -1 || written === 4294967295) {
+    return [];
+  }
+  const bytes = new Uint8Array(wasm.memory.buffer, outPtr, written);
+  return JSON.parse(decoder.decode(bytes));
+}
+
+function fillExampleMenu(examples) {
+  const sel = document.getElementById("examples");
+  const desc = document.getElementById("exdesc");
+  for (const ex of examples) {
+    const opt = document.createElement("option");
+    opt.value = ex.name;
+    opt.textContent = ex.name + " — " + ex.title;
+    sel.appendChild(opt);
+  }
+  const apply = () => {
+    const ex = examples.find((e) => e.name === sel.value);
+    if (!ex) return;
+    desc.textContent = ex.description;
+    document.getElementById("editor").value = ex.dsl;
+    renderNow();
+  };
+  sel.addEventListener("change", apply);
+  apply();
+}
+
 async function init() {
   const { instance } = await WebAssembly.instantiateStreaming(
     fetch("./gantt_wasm.wasm"),
@@ -55,6 +77,7 @@ async function init() {
   wasm = instance.exports;
   const editor = document.getElementById("editor");
   editor.addEventListener("input", renderNow);
+  fillExampleMenu(loadExamples());
   renderNow();
 }
 

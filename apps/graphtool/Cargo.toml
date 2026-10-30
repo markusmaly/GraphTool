@@ -1,0 +1,25 @@
+[package]
+name = "graphtool"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "GraphTool: grammar-of-graphics data visualisation on decks"
+
+[[bin]]
+name = "graphtool"
+path = "src/main.rs"
+
+[dependencies]
+graphtool-grammar = { path = "../../crates/graphtool-grammar" }
+graphtool-tidy = { path = "../../crates/graphtool-tidy" }
+graphtool-presets = { path = "../../crates/graphtool-presets" }
+graphtool-render = { path = "../../crates/graphtool-render" }
+graphtool-area = { path = "../../crates/graphtool-area" }
+# Standard egui/eframe 0.37 from crates.io. The DeckCraft workspace pins its
+# own patched egui fork via [patch]; this application crate lives outside
+# that workspace, so it uses the crates.io release directly. The shell code
+# targets the standard eframe App trait (update), not the fork's logic/ui
+# split; when GraphTool is merged into the full DeckCraft fork, switch to
+# the workspace dependencies and the fork's trait accordingly.
+eframe = "0.37"
+egui = "0.37"

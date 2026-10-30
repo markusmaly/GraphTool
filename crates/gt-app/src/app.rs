@@ -137,6 +137,17 @@ impl GraphToolApp {
                     if ui.button("New chart").clicked() {
                         self.add_chart(DEFAULT_DSL.to_string(), format!("Chart {}", self.next_id));
                     }
+                    ui.menu_button("Examples", |ui| {
+                        ui.weak("ggplot2 open data (mtcars, diamonds, mpg, …)");
+                        ui.separator();
+                        for ex in ganttcore::examples::all() {
+                            let label = format!("{} — {}", ex.title, ex.description);
+                            if ui.button(label).clicked() {
+                                self.add_chart(ex.dsl.clone(), ex.title.to_string());
+                                ui.close();
+                            }
+                        }
+                    });
                     if ui.button("Open…").clicked() {
                         self.load_project(PathBuf::from("project.gtp"));
                     }

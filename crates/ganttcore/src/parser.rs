@@ -199,19 +199,29 @@ fn parse_task_line(tokens: &[Token], i: &mut usize) -> Result<ParsedTaskLine, Pa
         return Err(ParseError { line, message: "expected `]` after task name".into() });
     }
 
-    // Leading display-label words until a recognized keyword.
+    // Leading display-label tokens until a recognized keyword. Numbers and
+    // percents are allowed inside labels (e.g. `Hornet 4 Drive`).
     const KEYWORDS: [&str; 7] = ["is", "starts", "happens", "lasts", "ends", "on", "as"];
     let mut k = 3;
     let mut label_words: Vec<String> = Vec::new();
     while k < toks.len() {
-        if let Tok::Word(w) = &toks[k].tok {
-            if KEYWORDS.contains(&w.as_str()) {
-                break;
+        match &toks[k].tok {
+            Tok::Word(w) => {
+                if KEYWORDS.contains(&w.as_str()) {
+                    break;
+                }
+                label_words.push(w.clone());
+                k += 1;
             }
-            label_words.push(w.clone());
-            k += 1;
-        } else {
-            break;
+            Tok::Number(n) => {
+                label_words.push(format_number(*n));
+                k += 1;
+            }
+            Tok::Percent(p) => {
+                label_words.push(format!("{}%", p));
+                k += 1;
+            }
+            _ => break,
         }
     }
     let inline_label = if label_words.is_empty() { None } else { Some(label_words.join(" ")) };

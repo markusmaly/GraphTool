@@ -1,0 +1,16 @@
+@startgantt
+projectscale daily
+project starts 1973-01-01
+title mtcars avg mpg by cylinders
+
+skinparam barColor MidnightBlue
+skinparam barHighlightColor DodgerBlue
+skinparam milestoneColor Crimson
+
+[T0] cyl4 starts 1973-01-01 and lasts 27 days in DodgerBlue
+[T0] is 100% complete
+[T1] cyl6 starts 1973-01-01 and lasts 20 days in Teal
+[T1] is 74% complete
+[T2] cyl8 starts 1973-01-01 and lasts 15 days in Crimson
+[T2] is 57% complete
+@endgantt

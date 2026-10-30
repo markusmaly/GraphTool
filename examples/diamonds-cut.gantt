@@ -1,0 +1,20 @@
+@startgantt
+projectscale daily
+project starts 2008-01-01
+title diamonds avg price by cut USD
+
+skinparam barColor MidnightBlue
+skinparam barHighlightColor DodgerBlue
+skinparam milestoneColor Crimson
+
+[T0] Fair starts 2008-01-01 and lasts 4 days in DodgerBlue
+[T0] is 23% complete
+[T1] Good starts 2008-01-01 and lasts 11 days in Teal
+[T1] is 62% complete
+[T2] Premium starts 2008-01-01 and lasts 18 days in Crimson
+[T2] is 98% complete
+[T3] Very Good starts 2008-01-01 and lasts 8 days in Orange
+[T3] is 44% complete
+[T4] Ideal starts 2008-01-01 and lasts 18 days in Purple
+[T4] is 100% complete
+@endgantt

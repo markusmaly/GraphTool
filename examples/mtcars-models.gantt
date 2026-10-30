@@ -1,0 +1,74 @@
+@startgantt
+projectscale daily
+project starts 1973-01-01
+title mtcars mpg by car model 1973
+
+skinparam barColor MidnightBlue
+skinparam barHighlightColor DodgerBlue
+skinparam milestoneColor Crimson
+
+[T0] Toyota Corolla starts 1973-01-01 and lasts 34 days in DodgerBlue
+[T0] is 100% complete
+[T1] Fiat starts 1973-01-01 and lasts 32 days in Teal
+[T1] is 96% complete
+[T2] Honda Civic starts 1973-01-01 and lasts 30 days in Crimson
+[T2] is 90% complete
+[T3] Lotus Europa starts 1973-01-01 and lasts 30 days in Orange
+[T3] is 90% complete
+[T4] Fiat X1-9 starts 1973-01-01 and lasts 27 days in Purple
+[T4] is 81% complete
+[T5] Porsche 914-2 starts 1973-01-01 and lasts 26 days in Green
+[T5] is 77% complete
+[T6] Merc 240D starts 1973-01-01 and lasts 24 days in Amber
+[T6] is 72% complete
+[T7] Datsun starts 1973-01-01 and lasts 23 days in Azure
+[T7] is 67% complete
+[T8] Merc starts 1973-01-01 and lasts 23 days in DodgerBlue
+[T8] is 67% complete
+[T9] Toyota Corona starts 1973-01-01 and lasts 22 days in Teal
+[T9] is 63% complete
+[T10] Hornet Drive starts 1973-01-01 and lasts 21 days in Crimson
+[T10] is 63% complete
+[T11] Volvo 142E starts 1973-01-01 and lasts 21 days in Orange
+[T11] is 63% complete
+[T12] Mazda RX4 starts 1973-01-01 and lasts 21 days in Purple
+[T12] is 62% complete
+[T13] Mazda RX4 Wag starts 1973-01-01 and lasts 21 days in Green
+[T13] is 62% complete
+[T14] Ferrari Dino starts 1973-01-01 and lasts 20 days in Amber
+[T14] is 58% complete
+[T15] Merc starts 1973-01-01 and lasts 19 days in Azure
+[T15] is 57% complete
+[T16] Pontiac Firebird starts 1973-01-01 and lasts 19 days in DodgerBlue
+[T16] is 57% complete
+[T17] Hornet Sportabout starts 1973-01-01 and lasts 19 days in Teal
+[T17] is 55% complete
+[T18] Valiant starts 1973-01-01 and lasts 18 days in Crimson
+[T18] is 53% complete
+[T19] Merc 280C starts 1973-01-01 and lasts 18 days in Orange
+[T19] is 53% complete
+[T20] Merc 450SL starts 1973-01-01 and lasts 17 days in Purple
+[T20] is 51% complete
+[T21] Merc 450SE starts 1973-01-01 and lasts 16 days in Green
+[T21] is 48% complete
+[T22] Ford Pantera L starts 1973-01-01 and lasts 16 days in Amber
+[T22] is 47% complete
+[T23] Dodge Challenger starts 1973-01-01 and lasts 16 days in Azure
+[T23] is 46% complete
+[T24] Merc 450SLC starts 1973-01-01 and lasts 15 days in DodgerBlue
+[T24] is 45% complete
+[T25] AMC Javelin starts 1973-01-01 and lasts 15 days in Teal
+[T25] is 45% complete
+[T26] Maserati Bora starts 1973-01-01 and lasts 15 days in Crimson
+[T26] is 44% complete
+[T27] Chrysler Imperial starts 1973-01-01 and lasts 15 days in Orange
+[T27] is 43% complete
+[T28] Duster starts 1973-01-01 and lasts 14 days in Purple
+[T28] is 42% complete
+[T29] Camaro Z28 starts 1973-01-01 and lasts 13 days in Green
+[T29] is 39% complete
+[T30] Cadillac Fleetwood starts 1973-01-01 and lasts 10 days in Amber
+[T30] is 31% complete
+[T31] Lincoln Continental starts 1973-01-01 and lasts 10 days in Azure
+[T31] is 31% complete
+@endgantt

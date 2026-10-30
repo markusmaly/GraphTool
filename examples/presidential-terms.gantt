@@ -1,0 +1,34 @@
+@startgantt
+projectscale daily
+project starts 1953-01-20
+title US presidents 1953 2021 by term
+
+skinparam barColor MidnightBlue
+skinparam barHighlightColor DodgerBlue
+skinparam milestoneColor Crimson
+
+[T0] Eisenhower starts 1953-01-20 and lasts 2923 days in Crimson
+[T0] is 100% complete
+[T1] Kennedy starts 1961-01-20 and lasts 1037 days in DodgerBlue
+[T1] is 100% complete
+[T2] Johnson starts 1963-11-22 and lasts 1887 days in DodgerBlue
+[T2] is 100% complete
+[T3] Nixon starts 1969-01-20 and lasts 2028 days in Crimson
+[T3] is 100% complete
+[T4] Ford starts 1974-08-09 and lasts 896 days in Crimson
+[T4] is 100% complete
+[T5] Carter starts 1977-01-20 and lasts 1462 days in DodgerBlue
+[T5] is 100% complete
+[T6] Reagan starts 1981-01-20 and lasts 2923 days in Crimson
+[T6] is 100% complete
+[T7] Bush starts 1989-01-20 and lasts 1462 days in Crimson
+[T7] is 100% complete
+[T8] Clinton starts 1993-01-20 and lasts 2923 days in DodgerBlue
+[T8] is 100% complete
+[T9] Bush starts 2001-01-20 and lasts 2923 days in Crimson
+[T9] is 100% complete
+[T10] Obama starts 2009-01-20 and lasts 2923 days in DodgerBlue
+[T10] is 100% complete
+[T11] Trump starts 2017-01-20 and lasts 1462 days in Crimson
+[T11] is 100% complete
+@endgantt
