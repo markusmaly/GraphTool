@@ -1,8 +1,6 @@
 [workspace]
-resolver = "2"
+resolver = "3"
 members = [
-    "crates/ganttcore",
-    "crates/gantt-cli",
-    "crates/gantt-wasm",
-    "crates/gt-app",
+    "crates/*",
+    "apps/*",
 ]

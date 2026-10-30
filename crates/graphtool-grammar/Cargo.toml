@@ -1,0 +1,10 @@
+[package]
+name = "graphtool-grammar"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Grammar-of-graphics chart specification model for GraphTool"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+graphtool-tidy = { path = "../graphtool-tidy" }
