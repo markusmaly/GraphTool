@@ -1,9 +1,9 @@
 [package]
 name = "gantt-cli"
-version = "0.1.0"
-edition = "2021"
+version.workspace = true
 description = "CLI for rendering Gantt DSL to SVG"
-license = "MIT"
+license.workspace = true
+edition.workspace = true
 
 [[bin]]
 name = "gantt"

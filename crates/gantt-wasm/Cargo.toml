@@ -1,9 +1,9 @@
 [package]
 name = "gantt-wasm"
-version = "0.1.0"
-edition = "2021"
+version.workspace = true
 description = "WebAssembly binding for in-browser Gantt rendering"
-license = "MIT"
+license.workspace = true
+edition.workspace = true
 
 [lib]
 crate-type = ["cdylib", "rlib"]

@@ -1,9 +1,9 @@
 [package]
 name = "gt-app"
-version = "0.1.0"
-edition = "2021"
+version.workspace = true
 description = "GraphTool GUI — deckcraft-style slide canvas with thinkcell-style charts"
-license = "MIT"
+license.workspace = true
+edition.workspace = true
 
 [lib]
 crate-type = ["rlib", "cdylib"]

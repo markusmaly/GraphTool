@@ -52,8 +52,4 @@
   <!-- "GraphTool" caption referencing the PowerPoint letter tile -->
   <text x="256" y="472" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700"
         fill="#FFFFFF" text-anchor="middle" opacity="0.9">GraphTool</text>
-
-  <!-- Version badge, top-right corner -->
-  <text x="452" y="76" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600"
-        fill="#FFFFFF" text-anchor="end" opacity="0.9">V0.1</text>
 </svg>

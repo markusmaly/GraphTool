@@ -1,8 +1,8 @@
 [package]
 name = "ganttcore"
-version = "0.1.0"
-edition = "2021"
+version.workspace = true
 description = "Parser and layout engine for thinkcell-style Gantt charts"
-license = "MIT"
+license.workspace = true
+edition.workspace = true
 
 [dependencies]
