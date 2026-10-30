@@ -1,6 +1,8 @@
 //! ganttcore — parser, resolver, layout and SVG renderer for
 //! thinkcell-style Gantt charts driven by a PlantUML-like DSL.
 
+pub mod datasets;
+pub mod examples;
 pub mod layout;
 pub mod lexer;
 pub mod model;

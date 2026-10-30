@@ -94,16 +94,17 @@ pub fn layout(chart: &GanttChart) -> Layout {
     }
     let span_days = (last_day - first_day + 1).max(1);
 
-    let (day_w, _) = match chart.scale.unit {
-        Unit::Day => (DAY_WIDTH_DAILY, 0.0),
-        Unit::Week => (WEEK_WIDTH / 7.0, 0.0),
-        Unit::Month => (MONTH_WIDTH / 30.0, 0.0),
+    let base_day_w = match chart.scale.unit {
+        Unit::Day => DAY_WIDTH_DAILY,
+        Unit::Week => WEEK_WIDTH / 7.0,
+        Unit::Month => MONTH_WIDTH / 30.0,
     };
-    let day_w = if chart.scale.length.is_some() {
-        // stretch to a fixed number of cells (reserved)
-        day_w
-    } else {
-        day_w
+    // Cap the total chart width so long timelines (e.g. decades of daily
+    // data) stay renderable; the day cell shrinks instead.
+    const MAX_CHART_W: f64 = 4000.0;
+    let day_w = {
+        let w = base_day_w * span_days as f64;
+        if w > MAX_CHART_W { base_day_w * MAX_CHART_W / w } else { base_day_w }
     };
 
     let chart_w = day_w * span_days as f64;

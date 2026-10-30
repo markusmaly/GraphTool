@@ -1,0 +1,18 @@
+@startgantt
+projectscale daily
+project starts 2000-01-01
+title msleep avg sleep hours by diet
+
+skinparam barColor MidnightBlue
+skinparam barHighlightColor DodgerBlue
+skinparam milestoneColor Crimson
+
+[T0] carni starts 2000-01-01 and lasts 21 days in DodgerBlue
+[T0] is 69% complete
+[T1] herbi starts 2000-01-01 and lasts 19 days in Teal
+[T1] is 64% complete
+[T2] insecti starts 2000-01-01 and lasts 30 days in Crimson
+[T2] is 100% complete
+[T3] omni starts 2000-01-01 and lasts 22 days in Orange
+[T3] is 73% complete
+@endgantt

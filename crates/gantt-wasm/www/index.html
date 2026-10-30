@@ -4,7 +4,10 @@
 <meta charset="utf-8">
 <title>GraphTool Gantt — Browser Demo</title>
 <style>
-  body { font-family: Arial, sans-serif; margin: 0; display: flex; height: 100vh; }
+  body { font-family: Arial, sans-serif; margin: 0; display: flex; flex-direction: column; height: 100vh; }
+  #toolbar { display: flex; gap: 8px; align-items: center; padding: 6px 8px;
+             background: #f5f5f5; border-bottom: 1px solid #ccc; font-size: 13px; }
+  #main { display: flex; flex: 1; min-height: 0; }
   #editor { width: 40%; height: 100%; box-sizing: border-box; resize: none;
             font-family: monospace; font-size: 13px; padding: 8px;
             border-right: 1px solid #ccc; }
@@ -13,6 +16,12 @@
 </style>
 </head>
 <body>
+<div id="toolbar">
+  <label for="examples"><strong>Examples (ggplot2 open data):</strong></label>
+  <select id="examples"></select>
+  <span id="exdesc" style="color:#555"></span>
+</div>
+<div id="main">
 <textarea id="editor" spellcheck="false">
 @startgantt
 projectscale daily
@@ -34,6 +43,7 @@ skinparam milestoneColor Crimson
 @endgantt
 </textarea>
 <div id="preview"></div>
+</div>
 <script src="./app.js"></script>
 </body>
 </html>

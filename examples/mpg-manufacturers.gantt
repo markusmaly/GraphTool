@@ -1,0 +1,40 @@
+@startgantt
+projectscale daily
+project starts 1999-01-01
+title mpg avg highway mpg by manufacturer
+
+skinparam barColor MidnightBlue
+skinparam barHighlightColor DodgerBlue
+skinparam milestoneColor Crimson
+
+[T0] honda n9 starts 1999-01-01 and lasts 33 days in DodgerBlue
+[T0] is 100% complete
+[T1] volkswagen n27 starts 1999-01-01 and lasts 29 days in Teal
+[T1] is 90% complete
+[T2] hyundai n14 starts 1999-01-01 and lasts 27 days in Crimson
+[T2] is 82% complete
+[T3] audi n18 starts 1999-01-01 and lasts 26 days in Orange
+[T3] is 81% complete
+[T4] pontiac n5 starts 1999-01-01 and lasts 26 days in Purple
+[T4] is 81% complete
+[T5] subaru n14 starts 1999-01-01 and lasts 26 days in Green
+[T5] is 79% complete
+[T6] toyota n34 starts 1999-01-01 and lasts 25 days in Amber
+[T6] is 77% complete
+[T7] nissan n13 starts 1999-01-01 and lasts 25 days in Azure
+[T7] is 76% complete
+[T8] chevrolet n19 starts 1999-01-01 and lasts 22 days in DodgerBlue
+[T8] is 67% complete
+[T9] ford n25 starts 1999-01-01 and lasts 19 days in Teal
+[T9] is 59% complete
+[T10] mercury n4 starts 1999-01-01 and lasts 18 days in Crimson
+[T10] is 55% complete
+[T11] dodge n37 starts 1999-01-01 and lasts 18 days in Orange
+[T11] is 55% complete
+[T12] jeep n8 starts 1999-01-01 and lasts 18 days in Purple
+[T12] is 54% complete
+[T13] lincoln n3 starts 1999-01-01 and lasts 17 days in Green
+[T13] is 52% complete
+[T14] land rover n4 starts 1999-01-01 and lasts 17 days in Amber
+[T14] is 51% complete
+@endgantt

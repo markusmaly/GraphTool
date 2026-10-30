@@ -9,7 +9,7 @@ Linux (Zorin/Ubuntu)** and in the **browser** (WebAssembly).
 
 | Crate | Purpose |
 |---|---|
-| `crates/ganttcore` | DSL parser, date resolver, layout engine, SVG writer (pure Rust, no deps) |
+| `crates/ganttcore` | DSL parser, date resolver, layout engine, SVG writer, embedded ggplot2 datasets + generated examples (pure Rust, no deps) |
 | `crates/gantt-cli` | CLI: render `.gantt` files to SVG |
 | `crates/gantt-wasm` | Minimal WASM binding + browser demo page (no wasm-bindgen) |
 | `crates/gt-app` | **GUI application** (egui) — ribbon, page canvas, live DSL editor |
@@ -59,6 +59,33 @@ python3 -m http.server 8000
 cargo run --release -p gantt-cli -- examples/simple.gantt -o out.svg
 ```
 
+### Built-in examples from ggplot2 open data
+
+The ggplot2 (and R `datasets`) open datasets are embedded in `ganttcore`
+(`crates/ganttcore/src/datasets.rs`) and turned into ready-made charts by
+`crates/ganttcore/src/examples.rs`:
+
+```bash
+gantt --examples                          # list all examples
+gantt --example mtcars-cyl -o mtcars.svg   # render one
+gantt examples/presidential-terms.gantt -o pres.svg   # or use the .gantt file
+```
+
+| Example | Dataset | Chart |
+|---|---|---|
+| `mtcars-cyl` | `mtcars` (R datasets, 32 cars) | avg mpg per cylinder count |
+| `mtcars-models` | `mtcars` | mpg for all 32 car models |
+| `mpg-manufacturers` | `mpg` (234 cars) | avg highway mpg per manufacturer |
+| `diamonds-cut` | `diamonds` (sample) | avg price per cut grade |
+| `msleep-vore` | `msleep` (83 mammals) | avg sleep per diet |
+| `midwest-poverty` | `midwest` (top-12 counties) | % below poverty per county |
+| `presidential-terms` | `presidential` | US presidential terms 1953–2021 |
+| `economics-savings` | `economics` (sample) | US savings rate 1967–2013 |
+
+The same examples are available in the GUI (Home → **Examples**) and in the
+browser demo (dropdown above the editor). Corresponding `.gantt` files live
+in `examples/`.
+
 ## DSL example
 
 ```text
@@ -83,6 +110,7 @@ skinparam barColor MidnightBlue
 - [x] SVG output (OS independent)
 - [x] GUI: ribbon (Home/Design/Tidying/Visualising), page canvas, live editor
 - [x] Native builds (Win/macOS/Linux) + WASM build
+- [x] ggplot2 open-data examples (mtcars, diamonds, mpg, economics, msleep, midwest, presidential) in CLI, GUI and WASM
 - [ ] More chart types (bar, line, waterfall — thinkcell portfolio)
 - [ ] Export page as SVG/PDF
 - [ ] Undo/redo
