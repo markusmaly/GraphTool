@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="pptBase" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E8532A"/>
+      <stop offset="1" stop-color="#B7472A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded app-icon tile in PowerPoint orange/red -->
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#pptBase)"/>
+
+  <!-- Subtle inner highlight, echoing the PPT letter tile -->
+  <rect x="32" y="32" width="448" height="448" rx="96" fill="none" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="6"/>
+
+  <!-- Grammar-of-graphics strata: stacked translucent layers -->
+  <g opacity="0.92">
+    <rect x="128" y="128" width="256" height="256" rx="40" fill="#FFFFFF" opacity="0.10"/>
+    <rect x="112" y="112" width="256" height="256" rx="40" fill="#FFFFFF" opacity="0.10"/>
+    <rect x="96"  y="96"  width="256" height="256" rx="40" fill="#FFFFFF" opacity="0.14"/>
+  </g>
+
+  <!-- Plot panel: white axes -->
+  <g stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" fill="none">
+    <path d="M152 152 V 392"/>
+    <path d="M152 392 H 408"/>
+  </g>
+
+  <!-- Geom layer 1: bars (bar geom) -->
+  <g fill="#FFFFFF" opacity="0.55">
+    <rect x="184" y="316" width="34" height="76" rx="8"/>
+    <rect x="242" y="264" width="34" height="128" rx="8"/>
+    <rect x="300" y="300" width="34" height="92" rx="8"/>
+  </g>
+
+  <!-- Geom layer 2: line (line geom) -->
+  <path d="M201 300 Q 259 210 317 246"
+        fill="none" stroke="#FFD5C2" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- Geom layer 3: point (data points / aesthetics) -->
+  <g fill="#FFFFFF">
+    <circle cx="201" cy="300" r="13"/>
+    <circle cx="259" cy="228" r="13"/>
+    <circle cx="317" cy="246" r="13"/>
+  </g>
+
+  <!-- Pencil nib: the act of plotting -->
+  <g transform="rotate(45 372 156)">
+    <rect x="356" y="120" width="32" height="72" rx="6" fill="#FFD5C2"/>
+    <path d="M356 192 L372 216 L388 192 Z" fill="#FFFFFF"/>
+  </g>
+
+  <!-- "GraphTool" caption referencing the PowerPoint letter tile -->
+  <text x="256" y="472" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700"
+        fill="#FFFFFF" text-anchor="middle" opacity="0.9">GraphTool</text>
+
+  <!-- Version badge, top-right corner -->
+  <text x="452" y="76" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600"
+        fill="#FFFFFF" text-anchor="end" opacity="0.9">V0.1</text>
+</svg>

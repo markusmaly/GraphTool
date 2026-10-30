@@ -1,5 +1,9 @@
 # GraphTool — Business charting with thinkcell-style Gantt charts
 
+<p align="left">
+  <img src="assets/icon.svg" alt="GraphTool icon" width="128"/>
+</p>
+
 A Rust application with a PowerPoint/deckcraft-style GUI: a horizontal page
 canvas where thinkcell-like charts are placed as **vector graphics**, driven
 by a PlantUML-like DSL. One codebase runs natively on **Windows, macOS,
