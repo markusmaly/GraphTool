@@ -1,13 +1,8 @@
 //! Native entry point for GraphTool GUI.
 
-/// Application title with the version derived from Cargo.toml at compile time.
-pub const APP_TITLE: &str = const {
-    let v = env!("CARGO_PKG_VERSION");
-    if v.is_empty() { "GraphTool" } else { concat!("GraphTool v", "") }
-};
-
 #[cfg(not(target_arch = "wasm32"))]
 fn main() -> eframe::Result<()> {
+    // The version is inherited from the workspace via Cargo.toml.
     let title = format!("GraphTool v{}", env!("CARGO_PKG_VERSION"));
     let options = eframe::NativeOptions {
         viewport: eframe::egui::ViewportBuilder::default()
